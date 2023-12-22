@@ -1,0 +1,24 @@
+/* Add hover styles for the button */
+.btn-theme:hover {
+    background-color: #f8f9fa; /* Light gray background color */
+}
+
+/* Ensure the icon is visible and vertically centered */
+.btn-theme .bi {
+    vertical-align: middle;
+}
+
+/* Make the button round */
+.btn-round {
+    border-radius: 50%;
+    width: 40px; /* Adjust the width and height based on your preference */
+    height: 40px;
+}
+
+/* Position the button in the upper right corner */
+.fixed-button-container {
+    position: fixed;
+    top: 10px; /* Adjust the top and right values for positioning */
+    right: 10px;
+    z-index: 1000; /* Ensure it's above other elements */
+}

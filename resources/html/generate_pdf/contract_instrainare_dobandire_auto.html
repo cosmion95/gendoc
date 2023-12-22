@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link href="http://127.0.0.1:3000/static/css/external/bootstrap.min.css" rel="stylesheet">
+    <script src="http://127.0.0.1:3000/static/js/external/bootstrap.min.js"></script>
+
+
+    <script src="http://127.0.0.1:3000/static/js/external/jquery.min.js"></script>
+    <script src="http://127.0.0.1:3000/static/js/external/pdf-lib.min.js"></script>
+    <script src="http://127.0.0.1:3000/static/js/external/download.min.js"></script>
+    <script src="http://127.0.0.1:3000/static/js/external/fontkit.umd.min.js"></script>
+
+    <script src="http://127.0.0.1:3000/static/js/contractInstrainareDobandireAutoPdf.js"></script>
+
+    <title>Contract înstrăinare - dobândire</title>
+</head>
+
+<body>
+    <h1>Contract înstrăinare - dobândire auto</h1>
+    <h4>Model 2016 ITL 054, varianta necompletată disponibilă <a href="http://127.0.0.1:3000/static/pdfs/contract_instrainare_dobandire_auto.pdf" target="_blank">aici</a></h4>
+    <h3>Informații vânzător</h3>
+    <table id="seller-info-table">
+        <tr>
+            <td><h4>Informații persoană fizică</h4></td>
+            <td><h4>Informații domiciliu fiscal</h4></td>
+        </tr>
+        <tr><td>
+            <table id="seller-individual-info-table">
+                <tr><td>Nume</td><td><input id="seller-individual-name" type="text" /></td></tr>
+                <tr><td>Țară(completat dacă nu e România)</td><td><input id="seller-individual-country" type="text" /></td></tr>
+                <tr><td>Județ</td><td><input id="seller-individual-county" type="text" /></td></tr>
+                <tr><td>Cod poștal</td><td><input id="seller-individual-postal-code" type="text" /></td></tr>
+                <tr><td>Municipiu/oraș/comuna</td><td><input id="seller-individual-city" type="text" /></td></tr>
+                <tr><td>Sat/sector</td><td><input id="seller-individual-sub-city" type="text" /></td></tr>
+                <tr><td>Strada</td><td><input id="seller-individual-street" type="text" /></td></tr>
+                <tr><td>Nr</td><td><input id="seller-individual-street-nr" type="text" /></td></tr>
+                <tr><td>Bloc</td><td><input id="seller-individual-building-nr" type="text" /></td></tr>
+                <tr><td>Scara</td><td><input id="seller-individual-entrance" type="text" /></td></tr>
+                <tr><td>Etaj</td><td><input id="seller-individual-floor" type="text" /></td></tr>
+                <tr><td>Apartament</td><td><input id="seller-individual-apt-nr" type="text" /></td></tr>
+                <tr><td>Serie BI/CI/CIP/Pașaport</td><td><input id="seller-individual-id-series" type="text" /></td></tr>
+                <tr><td>Nr</td><td><input id="seller-individual-id-nr" type="text" /></td></tr>
+                <tr><td>CNP/CIF</td><td><input id="seller-individual-cnp" type="text" /></td></tr>
+                <tr><td>Telefon</td><td><input id="seller-individual-phone" type="text" /></td></tr>
+                <tr><td>Email</td><td><input id="seller-individual-email" type="text" /></td></tr>
+            </table>
+        </td>
+        <td>
+            <table id="seller-fiscal-address-table">
+                <tr><td>Țară(completat dacă nu e România)</td><td><input id="seller-fiscal-address-country" type="text" /></td></tr>
+                <tr><td>Județ</td><td><input id="seller-fiscal-address-county" type="text" /></td></tr>
+                <tr><td>Cod poștal</td><td><input id="seller-fiscal-address-postal-code" type="text" /></td></tr>
+                <tr><td>Municipiu/oraș/comuna</td><td><input id="seller-fiscal-address-city" type="text" /></td></tr>
+                <tr><td>Sat/sector</td><td><input id="seller-fiscal-address-sub-city" type="text" /></td></tr>
+                <tr><td>Strada</td><td><input id="seller-fiscal-address-street" type="text" /></td></tr>
+                <tr><td>Nr</td><td><input id="seller-fiscal-address-street-nr" type="text" /></td></tr>
+                <tr><td>Bloc</td><td><input id="seller-fiscal-address-building-nr" type="text" /></td></tr>
+                <tr><td>Scara</td><td><input id="seller-fiscal-address-entrance" type="text" /></td></tr>
+                <tr><td>Etaj</td><td><input id="seller-fiscal-address-floor" type="text" /></td></tr>
+                <tr><td>Apartament</td><td><input id="seller-fiscal-address-apt-nr" type="text" /></td></tr>
+            </table>
+        </td></tr>
+    </table>
+
+    <button onclick="contractInstrainareDobandirePdf()">Generează PDF contract</button>
+
+</body>
+
+</html>
