@@ -5,7 +5,6 @@ var ubuntuFont;
 
 async function contractInstrainareDobandirePdf() {
 
-
     const fontUrl = '/static/fonts/Ubuntu-R.ttf';
     const fontBytes = await fetch(fontUrl).then((res) => res.arrayBuffer());
 
@@ -72,7 +71,7 @@ function getFontSize(fieldSize, value) {
 
     while (true) {
         valueSize = valueWitdh * fieldSizesByFontSize[fontSize];
-        console.log("Value size: " + valueSize + " while field size: " + fieldSize + ", font size: " + fontSize);
+        //console.log("Value size: " + valueSize + " while field size: " + fieldSize + ", font size: " + fontSize);
         if (valueSize <= fieldSize)
             return fontSize;
 
@@ -93,7 +92,7 @@ function writeToPdf(page, x, y, fieldSize, fieldIdentifier) {
         throw err;
     }
 
-    console.log("Drawing text to PDF with size " + fontSize);
+    //console.log("Drawing text to PDF with size " + fontSize);
     page.drawText(value, { x: x, y: y, size: fontSize, font: ubuntuFont });
 }
 
@@ -107,7 +106,7 @@ function getWidth(value) {
         totalWidth += charWidth;
     }
 
-    console.log("Total width: " + totalWidth);
+    //console.log("Total width: " + totalWidth);
     return totalWidth;
 }
 

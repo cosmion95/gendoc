@@ -30,13 +30,19 @@ server.get('*', (req, res) => {
 
 server.post("*", (req, res) => {
     console.log("POST request received for URL: " + req.url);
+
+    if (!req.cookies.sessionId) {
+        res.writeHead(401);
+        res.end("Session not found!");
+    }
+
     const route = postRoutes[req.url];
     if (route) {
         route(req, res);
     } else {
         console.log("Unable to identify POST route: " + req.url);
         res.writeHead(404, { 'Content-Type': 'text/html' });
-        res.end('Error: page not found');
+        res.end('Error: invalid request');
     }
 });
 

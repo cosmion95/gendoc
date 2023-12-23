@@ -47,7 +47,12 @@ class SessionManager {
         console.log("Cookie session was set to " + sessionId);
         session = this.getSession(sessionId, "this_other_origin");
     }
-    res.cookie("sessionId", session.getId());
+
+    res.cookie("sessionId", session.getId(), {
+      //secure: true,
+      httpOnly: true,
+      sameSite: 'Strict'
+    });
 
     console.log(session);
     return session;
