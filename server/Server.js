@@ -1,46 +1,45 @@
-const routes = require('./routes/Routes');
-const SessionManager = require('./sessions/SessionManager');
+const config = require('./Config');
+const { getRoutes, postRoutes } = require('./routes/Routes');
 
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const server = express();
-const sessionManager = new SessionManager();
-const port = 3000;
 
 server.use(cookieParser());
 server.set('view engine', 'ejs');
 
 server.get('*', (req, res) => {
+    console.log("GET request received for URL: " + req.url);
     res.setHeader('Content-Type', 'text/html');
-
-    console.log("Request received for URL: " + req.url);
-
-    // check if session cookie is set
-    const sessionId = req.cookies.sessionId;
-    let session = null;
-    if (!sessionId) {
-        session = sessionManager.generateSession("this_origin");
-        res.cookie("sessionId", session.getId());
-    } else {
-        session = sessionManager.getSession(sessionId, "this_other_origin");
-    }
 
     action = req.url;
     if (req.url.indexOf('/', 1) > -1) {
         action = req.url.substring(0, req.url.indexOf('/', 1));
     }
 
-    const route = routes[action];
+    const route = getRoutes[action];
     if (route) {
-        route(req, res, session);
+        route(req, res);
     } else {
+        console.log("Unable to identify GET route: " + req.url);
         res.writeHead(404, { 'Content-Type': 'text/html' });
         res.end('Error: page not found');
     }
 });
 
-server.listen(port, () => {
-    console.log(`Server is running at http://127.0.0.1:${port}`);
+server.post("*", (req, res) => {
+    console.log("POST request received for URL: " + req.url);
+    const route = postRoutes[req.url];
+    if (route) {
+        route(req, res);
+    } else {
+        console.log("Unable to identify POST route: " + req.url);
+        res.writeHead(404, { 'Content-Type': 'text/html' });
+        res.end('Error: page not found');
+    }
 });
 
+server.listen(config.port, () => {
+    console.log(`Server is running at ${config.ipAddress}:${config.port}`);
+});

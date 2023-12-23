@@ -8,7 +8,7 @@ class SessionManager {
   }
 
   generateSession(origin) {
-    let sessionId;
+    var sessionId;
     do {
       sessionId = this.generateRandomString(32);
     } while (this.sessions.has(sessionId));
@@ -20,9 +20,11 @@ class SessionManager {
   }
 
   getSession(id, origin) {
-    let session = this.sessions.get(id);
+    var session = this.sessions.get(id);
     if (!session)
       return this.generateSession(origin);
+    
+    return session  
   }
 
   generateRandomString() {
@@ -34,6 +36,22 @@ class SessionManager {
     }
     return result;
   }
+
+  getRequestSession(req, res) {
+    const sessionId = req.cookies.sessionId;
+    var session = null;
+    if (!sessionId) {
+        console.log("Cookie session was not set");
+        session = this.generateSession("this_origin");
+    } else {
+        console.log("Cookie session was set to " + sessionId);
+        session = this.getSession(sessionId, "this_other_origin");
+    }
+    res.cookie("sessionId", session.getId());
+
+    console.log(session);
+    return session;
+  }
 }
 
-module.exports = SessionManager;
+exports.sessionManager = new SessionManager();

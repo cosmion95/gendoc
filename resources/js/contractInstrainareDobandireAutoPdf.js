@@ -6,10 +6,10 @@ var ubuntuFont;
 async function contractInstrainareDobandirePdf() {
 
 
-    const fontUrl = 'http://127.0.0.1:3000/static/fonts/Ubuntu-R.ttf';
+    const fontUrl = '/static/fonts/Ubuntu-R.ttf';
     const fontBytes = await fetch(fontUrl).then((res) => res.arrayBuffer());
 
-    const url = 'http://127.0.0.1:3000/static/pdfs/contract_instrainare_dobandire_auto.pdf';
+    const url = '/static/pdfs/contract_instrainare_dobandire_auto.pdf';
     const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
 
     const pdfDoc = await PDFDocument.load(existingPdfBytes);
@@ -21,35 +21,35 @@ async function contractInstrainareDobandirePdf() {
     const firstPage = pages[0];
     const { width, height } = firstPage.getSize();
 
-    //writeToPdf(firstPage, 343, height - 167, 92, "#seller-individual-name");
+    writeToPdf(firstPage, 343, height - 167, 92, "#seller-individual-name");
     writeToPdf(firstPage, 186, height - 178, 23, "#seller-individual-country");
-    // writeToPdf(firstPage, 279, height - 178, 92, "#seller-individual-county");
-    // writeToPdf(firstPage, 414, height - 178, 92, "#seller-individual-postal-code");
-    // writeToPdf(firstPage, 44,  height - 189, 92, "#seller-individual-city");
-    // writeToPdf(firstPage, 222, height - 189, 92, "#seller-individual-sub-city");
-    // writeToPdf(firstPage, 331, height - 189, 92, "#seller-individual-street");
-    // writeToPdf(firstPage, 556, height - 189, 92, "#seller-individual-street-nr");
-    // writeToPdf(firstPage, 66,  height - 200, 92, "#seller-individual-building-nr");
-    // writeToPdf(firstPage, 119, height - 200, 92, "#seller-individual-entrance");
-    // writeToPdf(firstPage, 173, height - 200, 92, "#seller-individual-floor");
-    // writeToPdf(firstPage, 225, height - 200, 92, "#seller-individual-apt-nr");
-    // writeToPdf(firstPage, 479, height - 200, 92, "#seller-individual-id-series");
-    // writeToPdf(firstPage, 530, height - 200, 92, "#seller-individual-id-nr");
-    // writeToPdf(firstPage, 101, height - 213, 92, "#seller-individual-cnp");
-    // writeToPdf(firstPage, 267, height - 213, 92, "#seller-individual-phone");
-    // writeToPdf(firstPage, 382, height - 213, 92, "#seller-individual-email");
-    //                                          92, 
-    // writeToPdf(firstPage, 185, height - 224, 92, "#seller-fiscal-address-country");
-    // writeToPdf(firstPage, 308, height - 224, 92, "#seller-fiscal-address-county");
-    // writeToPdf(firstPage, 518, height - 224, 92, "#seller-fiscal-address-postal-code");
-    // writeToPdf(firstPage, 152, height - 235, 92, "#seller-fiscal-address-city");
-    // writeToPdf(firstPage, 350, height - 235, 92, "#seller-fiscal-address-sub-city");
-    // writeToPdf(firstPage, 493, height - 235, 92, "#seller-fiscal-address-street");
-    // writeToPdf(firstPage, 142, height - 247, 92, "#seller-fiscal-address-street-nr");
-    // writeToPdf(firstPage, 180, height - 247, 92, "#seller-fiscal-address-building-nr");
-    // writeToPdf(firstPage, 223, height - 247, 92, "#seller-fiscal-address-entrance");
-    // writeToPdf(firstPage, 261, height - 247, 92, "#seller-fiscal-address-floor");
-    // writeToPdf(firstPage, 295, height - 247, 92, "#seller-fiscal-address-apt-nr");
+    writeToPdf(firstPage, 279, height - 178, 92, "#seller-individual-county");
+    writeToPdf(firstPage, 414, height - 178, 92, "#seller-individual-postal-code");
+    writeToPdf(firstPage, 44,  height - 189, 92, "#seller-individual-city");
+    writeToPdf(firstPage, 222, height - 189, 92, "#seller-individual-sub-city");
+    writeToPdf(firstPage, 331, height - 189, 92, "#seller-individual-street");
+    writeToPdf(firstPage, 556, height - 189, 92, "#seller-individual-street-nr");
+    writeToPdf(firstPage, 66,  height - 200, 92, "#seller-individual-building-nr");
+    writeToPdf(firstPage, 119, height - 200, 92, "#seller-individual-entrance");
+    writeToPdf(firstPage, 173, height - 200, 92, "#seller-individual-floor");
+    writeToPdf(firstPage, 225, height - 200, 92, "#seller-individual-apt-nr");
+    writeToPdf(firstPage, 479, height - 200, 92, "#seller-individual-id-series");
+    writeToPdf(firstPage, 530, height - 200, 92, "#seller-individual-id-nr");
+    writeToPdf(firstPage, 101, height - 213, 92, "#seller-individual-cnp");
+    writeToPdf(firstPage, 267, height - 213, 92, "#seller-individual-phone");
+    writeToPdf(firstPage, 382, height - 213, 92, "#seller-individual-email");
+                                             92, 
+    writeToPdf(firstPage, 185, height - 224, 92, "#seller-fiscal-address-country");
+    writeToPdf(firstPage, 308, height - 224, 92, "#seller-fiscal-address-county");
+    writeToPdf(firstPage, 518, height - 224, 92, "#seller-fiscal-address-postal-code");
+    writeToPdf(firstPage, 152, height - 235, 92, "#seller-fiscal-address-city");
+    writeToPdf(firstPage, 350, height - 235, 92, "#seller-fiscal-address-sub-city");
+    writeToPdf(firstPage, 493, height - 235, 92, "#seller-fiscal-address-street");
+    writeToPdf(firstPage, 142, height - 247, 92, "#seller-fiscal-address-street-nr");
+    writeToPdf(firstPage, 180, height - 247, 92, "#seller-fiscal-address-building-nr");
+    writeToPdf(firstPage, 223, height - 247, 92, "#seller-fiscal-address-entrance");
+    writeToPdf(firstPage, 261, height - 247, 92, "#seller-fiscal-address-floor");
+    writeToPdf(firstPage, 295, height - 247, 92, "#seller-fiscal-address-apt-nr");
 
     const pdfBytes = await pdfDoc.save();
 

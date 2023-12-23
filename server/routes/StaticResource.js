@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-function staticResource(req, res, session) {
+function staticResource(req, res) {
     const filePath = path.join(__dirname, 'public', "../../../resources" + req.url.substring(7));
 
-    console.log("Reading static resource: " + filePath);
+    //console.log("Reading static resource: " + filePath);
     fs.access(filePath, fs.constants.F_OK, (err) => {
         if (err) {
             console.log("Error reading static resource: " + err);
@@ -13,7 +13,7 @@ function staticResource(req, res, session) {
             return;
         }
 
-        console.log("Serving static resource: " + filePath);
+        //console.log("Serving static resource: " + filePath);
         res.writeHead(200, { 'Content-Type': getContentType(filePath) });
 
         const fileStream = fs.createReadStream(filePath);
@@ -21,14 +21,34 @@ function staticResource(req, res, session) {
     });
 }
 
+function favicon(req, res) {
+    const filePath = path.join(__dirname, 'public', "../../../resources/img/file-contract-solid.ico");
+
+    //console.log("Reading static resource: " + filePath);
+    fs.access(filePath, fs.constants.F_OK, (err) => {
+        if (err) {
+            console.log("Error reading static resource: " + err);
+            res.writeHead(404, { 'Content-Type': 'text/plain' });
+            res.end('Not Found');
+            return;
+        }
+
+        //console.log("Serving static resource: " + filePath);
+        res.writeHead(200, { 'Content-Type': getContentType(filePath) });
+
+        const fileStream = fs.createReadStream(filePath);
+        fileStream.pipe(res);
+    });
+}
 
 module.exports = {
-    staticResource
+    staticResource,
+    favicon
 };
 
 function getContentType(filePath) {
     const extname = path.extname(filePath);
-    switch (extname) {
+    switch (extname) { 
         case '.html':
             return 'text/html';
         case '.css':
