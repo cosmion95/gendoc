@@ -10,7 +10,7 @@
 
     <script src="https://kit.fontawesome.com/76537df4c9.js" crossorigin="anonymous"></script>
 
-    <script src="/static/js/external/bootstrap.min.js"></script>
+    <script src="/static/js/external/bootstrap.bundle.min.js"></script>
     <script src="/static/js/external/jquery.min.js"></script>
     <script src="/static/js/external/pdf-lib.min.js"></script>
     <script src="/static/js/external/download.min.js"></script>
@@ -24,14 +24,12 @@
             padding: 20px;
         }
 
-        /* Add padding to form labels */
         form label {
             margin-left: 10px;
-            /* Adjust the padding as needed */
         }
 
-        div.form-floating.col-md-4.col-sm-12.col-lg-3 {
-            padding: 10px;
+        div.card-header {
+            margin-bottom: 10px;
         }
 
         .form-floating {
@@ -80,13 +78,21 @@
         <div class="card-body">
             <div class="card-header">
                 <h4 class="card-title"> Informații vânzător</h4>
+                <div class="form-group col-md-4 col-sm-12 col-lg-3">
+                    <select class="form-select" id="seller-type" name="sellist1">
+                        <option value="PF" selected>Persoană fizică</option>
+                        <option value="PJ">Persoană juridică</option>
+                    </select>
+                </div>
             </div>
+            
             <form class="row">
                 <div class="form-floating col-md-4 col-sm-12 col-lg-3">
                     <input id="seller-individual-name" placeholder="seller-individual-name" class="form-control"
                         name="seller-individual-name" type="text" />
                     <label for="seller-individual-name">Nume</label>
-                    <div class="info-btn" title="Additional information">i
+                    <div class="info-btn" data-bs-toggle="popover" title="Popover Header"
+                        data-bs-content="Some content inside the popover">i
                     </div>
                 </div>
                 <div class="form-floating col-md-4 col-sm-12 col-lg-3">
