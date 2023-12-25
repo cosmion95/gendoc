@@ -1,0 +1,67 @@
+body {
+    padding: 20px;
+}
+
+form label {
+    margin-left: 10px;
+}
+
+div.card-header {
+    margin-bottom: 10px;
+}
+
+.fiscal-address-checkbox {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-floating {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.card-header-with-info {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.card-title-with-info {
+    padding-top: 5px;
+}
+
+.form-floating input {
+    padding-right: 36px;
+    /* Space for the info button */
+}
+
+.info-btn {
+    margin-right: 10px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: white;
+}
+
+.info-btn-header {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: white;
+}

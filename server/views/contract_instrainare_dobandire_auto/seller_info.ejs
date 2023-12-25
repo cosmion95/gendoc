@@ -1,0 +1,251 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-header">
+            <h4 class="card-title">Informații vânzător</h4>
+            <div class="form-group col-md-4 col-sm-12 col-lg-3">
+                <select class="form-select" id="seller-type" name="seller-type">
+                    <option value="PF" selected>Persoană fizică
+                    </option>
+                    <option value="PJ">Persoană juridică</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+            <input id="seller-individual-name" placeholder="seller-individual-name" class="form-control"
+                name="seller-individual-name" type="text" />
+            <label id="seller-individual-name-label" for="seller-individual-name"></label>
+            <div id="seller-individual-name-info-pf" class="info-btn" data-bs-toggle="popover" data-bs-html="true"
+                data-bs-trigger="focus" tabindex="0"
+                data-bs-content="Numele complet al vânzătorului, format din numele de familie și prenume. <br>Ex: <b>Popescu Ion</b>">
+                i</div>
+            <div id="seller-individual-name-info-pj" class="info-btn" data-bs-toggle="popover" data-bs-html="true"
+                data-bs-trigger="focus" tabindex="0"
+                data-bs-content="Denumirea societății. <br>Ex: <b> Denumire Societate SRL</b>">
+                i</div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <div
+                    class="card-header card-header-with-info card-header card-header-with-info d-flex justify-content-between align-items-center">
+                    <div class="row">
+                        <div class="col" style="padding-right: 0px;">
+                            <h6 id="seller-address-type-header" class="card-title card-title-with-info">
+                            </h6>
+                        </div>
+                        <div id="seller-address-type-info-div" class="col" style="padding-left: 5px;">
+                            <div class="info-btn-header" data-bs-toggle="popover" data-bs-html="true"
+                                data-bs-trigger="focus"
+                                data-bs-content="Adresa de domiciliu a vânzătorului, conform documentului cu care se identifică. <br>Ex: <b>adresa din buletin</b>"
+                                tabindex="0">
+                                i</div>
+                        </div>
+                    </div>
+                </div>
+                <form id="seller-individual-address-form" class="row">
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-country" placeholder="seller-individual-country"
+                            class="form-control" name="seller-individual-country" type="text" value="România" />
+                        <label for="seller-individual-country">Țară</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-county" placeholder="seller-individual-county" class="form-control"
+                            name="seller-individual-county" type="text" /><label
+                            for="seller-individual-county">Județ</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-postal-code" placeholder="seller-individual-postal-code"
+                            class="form-control" name="seller-individual-postal-code" type="text" /><label
+                            for="seller-individual-postal-code">Cod
+                            poștal</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-city" placeholder="seller-individual-city" class="form-control"
+                            name="seller-individual-city" type="text" /><label
+                            for="seller-individual-city">Municipiu/oraș/comuna</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-sub-city" placeholder="seller-individual-sub-city"
+                            class="form-control" name="seller-individual-sub-city" type="text" /><label
+                            for="seller-individual-sub-city">Sat/sector</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-street" placeholder="seller-individual-street" class="form-control"
+                            name="seller-individual-street" type="text" /><label
+                            for="seller-individual-street">Strada</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-street-nr" placeholder="seller-individual-street-nr"
+                            class="form-control" name="seller-individual-street-nr" type="text" /><label
+                            for="seller-individual-street-nr">Nr.
+                            stradă</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-building-nr" placeholder="seller-individual-building-nr"
+                            class="form-control" name="seller-individual-building-nr" type="text" /><label
+                            for="seller-individual-building-nr">Bloc</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-entrance" placeholder="seller-individual-entrance"
+                            class="form-control" name="seller-individual-entrance" type="text" /><label
+                            for="seller-individual-entrance">Scara</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-floor" placeholder="seller-individual-floor" class="form-control"
+                            name="seller-individual-floor" type="text" /><label
+                            for="seller-individual-floor">Etaj</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-apt-nr" placeholder="seller-individual-apt-nr" class="form-control"
+                            name="seller-individual-apt-nr" type="text" /><label
+                            for="seller-individual-apt-nr">Apartament</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="card-header card-header-with-info">
+                    <h6 class="card-title card-title-with-info">Date
+                        de identificare</h6>
+                    <div id="seller-identity-info-div" class="info-btn" data-bs-toggle="popover" data-bs-html="true"
+                        style="left: 160px" data-bs-trigger="focus" tabindex="0"
+                        data-bs-content="Informații din documentul cu care vânzătorul se identifică. <br>Ex: <b>carte de identitate, pașaport</b>">
+                        i</div>
+                </div>
+                <form id="seller-individual-form" class="row">
+                    <div id="seller-individual-id-series-div" class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-id-series" placeholder="seller-individual-id-series"
+                            class="form-control" name="seller-individual-id-series" type="text" /><label
+                            for="seller-individual-id-series">Serie
+                            BI/CI/CIP/Pașaport</label>
+                        <div class="info-btn" data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="focus"
+                            tabindex="0" data-bs-content="Seria documentului de identificare. <br>Ex: <b>MS</b>">
+                            i</div>
+                    </div>
+                    <div id="seller-individual-id-nr-div" class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-id-nr" placeholder="seller-individual-id-nr" class="form-control"
+                            name="seller-individual-id-nr" type="text" /><label
+                            for="seller-individual-id-nr">Număr</label>
+                        <div class="info-btn" data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="focus"
+                            tabindex="0" data-bs-content="Numărul documentului de identificare. <br>Ex: <b>333666</b>">
+                            i</div>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-cnp" placeholder="seller-individual-cnp" class="form-control"
+                            name="seller-individual-cnp" type="text" /><label id="seller-individual-cnp-label"
+                            for="seller-individual-cnp"></label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="card-header">
+                    <h6 class="card-title">Date de contact</h6>
+                </div>
+                <form id="seller-individual-form" class="row">
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-phone" placeholder="seller-individual-phone" class="form-control"
+                            name="seller-individual-phone" type="text" /><label
+                            for="seller-individual-phone">Telefon</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-individual-email" placeholder="seller-individual-email" class="form-control"
+                            name="seller-individual-email" type="text" /><label
+                            for="seller-individual-email">Email</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="form-check mt-3 mb-3 fiscal-address-checkbox">
+            <input type="checkbox" class="form-check-input" id="seller-different-fiscal-address-checkbox"
+                value="seller-different-fiscal-address-checkbox">
+            <label class="form-check-label" for="seller-different-fiscal-address-checkbox">Cu alt
+                domiciliu
+                fiscal</label>
+            <div id="seller-different-fiscal-address-pf-info-div" class="info-btn" data-bs-toggle="popover"
+                data-bs-html="true" data-bs-trigger="focus" tabindex="0" style="left: 180px;"
+                data-bs-content="Reprezintă adresa pe care autovehiculul este înregistrat, în cazul în care aceasta diferă de adresa efectivă a vânzătorului.">
+                i</div>
+            <div id="seller-different-fiscal-address-pj-info-div" class="info-btn" data-bs-toggle="popover"
+                data-bs-html="true" data-bs-trigger="focus" tabindex="0" style="left: 180px;"
+                data-bs-content="Pentru cazul în care conducerea efectivă a afacerilor și gestiunea administrativă nu se exercită la sediul social declarat.">
+                i</div>
+        </div>
+
+        <div id="seller-different-fiscal-address-card" class="card mt-3 mb-3 d-none">
+            <div class="card-body">
+                <div class="card-header">
+                    <h6 class="card-title">Domiciliu fiscal</h6>
+                </div>
+                <form id="different-fiscal-address-form" class="row">
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-country" placeholder="seller-fiscal-address-country"
+                            class="form-control" name="seller-fiscal-address-country" type="text"
+                            value="România" /><label for="seller-fiscal-address-country">Țară</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-county" placeholder="seller-fiscal-address-county"
+                            class="form-control" name="seller-fiscal-address-county" type="text" /><label
+                            for="seller-fiscal-address-county">Județ</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-postal-code" placeholder="seller-fiscal-address-postal-code"
+                            class="form-control" name="seller-fiscal-address-postal-code" type="text" /><label
+                            for="seller-fiscal-address-postal-code">Cod
+                            poștal</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-city" placeholder="seller-fiscal-address-city"
+                            class="form-control" name="seller-fiscal-address-city" type="text" /><label
+                            for="seller-fiscal-address-city">Municipiu/oraș/comuna</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-sub-city" placeholder="seller-fiscal-address-sub-city"
+                            class="form-control" name="seller-fiscal-address-sub-city" type="text" /><label
+                            for="seller-fiscal-address-sub-city">Sat/sector</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-street" placeholder="seller-fiscal-address-street"
+                            class="form-control" name="seller-fiscal-address-street" type="text" /><label
+                            for="seller-fiscal-address-street">Strada</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-street-nr" placeholder="seller-fiscal-address-street-nr"
+                            class="form-control" name="seller-fiscal-address-street-nr" type="text" /><label
+                            for="seller-fiscal-address-street-nr">Nr</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-building-nr" placeholder="seller-fiscal-address-building-nr"
+                            class="form-control" name="seller-fiscal-address-building-nr" type="text" /><label
+                            for="seller-fiscal-address-building-nr">Bloc</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-entrance" placeholder="seller-fiscal-address-entrance"
+                            class="form-control" name="seller-fiscal-address-entrance" type="text" /><label
+                            for="seller-fiscal-address-entrance">Scara</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-floor" placeholder="seller-fiscal-address-floor"
+                            class="form-control" name="seller-fiscal-address-floor" type="text" /><label
+                            for="seller-fiscal-address-floor">Etaj</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="seller-fiscal-address-apt-nr" placeholder="seller-fiscal-address-apt-nr"
+                            class="form-control" name="seller-fiscal-address-apt-nr" type="text" /><label
+                            for="seller-fiscal-address-apt-nr">Apartament</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="1"
+                class="btn btn-success active carousel-button">Înainte</button>
+        </div>
+    </div>
+</div>

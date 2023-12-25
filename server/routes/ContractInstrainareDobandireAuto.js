@@ -5,7 +5,7 @@ function contractInstrainareDobandireAuto(req, res) {
         "session_theme": sessionManager.getRequestSession(req, res).getTheme() === true ? "light" : "dark"
     };
 
-    res.render("contract_instrainare_dobandire_auto", data);
+    res.render("contract_instrainare_dobandire_auto/index", data);
 }
 
 module.exports = {

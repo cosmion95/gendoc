@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link href="/static/css/external/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/css/theme.css" rel="stylesheet" />
+    <link href="/static/css/contract_instrainare_dobandire_auto/page.css" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/76537df4c9.js" crossorigin="anonymous"></script>
+
+    <script src="/static/js/external/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/external/jquery.min.js"></script>
+    <script src="/static/js/external/pdf-lib.min.js"></script>
+    <script src="/static/js/external/download.min.js"></script>
+    <script src="/static/js/external/fontkit.umd.min.js"></script>
+
+    <script src="/static/js/contract_instrainare_dobandire_auto/page_scripts.js"></script>
+    <script src="/static/js/contract_instrainare_dobandire_auto/generate_pdf.js"></script>
+    <script src="/static/js/theme.js"></script>
+
+    <title>Contract înstrăinare - dobândire auto</title>
+</head>
+
+<body data-bs-theme="<%= session_theme %>">
+    <div class="fixed-button-container">
+        <button type="button" class="btn btn-light btn-theme btn-round" onclick="toggleTheme()">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
+
+    <h1>Contract înstrăinare - dobândire auto</h1>
+    <h4>
+        Model 2016 ITL 054, varianta necompletată disponibilă
+        <a href="/static/pdfs/contract_instrainare_dobandire_auto.pdf" target="_blank">aici</a>
+    </h4>
+
+    <div id="main-carousel" class="carousel slide" data-interval="false">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <%- include('seller_info') %>
+            </div>
+
+            <div class="carousel-item">
+                <%- include('buyer_info') %>
+            </div>
+
+            <div class="carousel-item">
+                <%- include('vehicle_info') %>
+            </div>s
+        </div>
+
+    </div>
+</body>
+
+</html>

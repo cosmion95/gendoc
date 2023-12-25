@@ -3,7 +3,7 @@ const { PDFDocument } = PDFLib
 const baseFontSize = 9;
 var ubuntuFont;
 
-async function contractInstrainareDobandirePdf() {
+async function generatePdf() {
 
     const fontUrl = '/static/fonts/Ubuntu-R.ttf';
     const fontBytes = await fetch(fontUrl).then((res) => res.arrayBuffer());
