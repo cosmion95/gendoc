@@ -1,9 +1,9 @@
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl)
-})
-
 $(document).ready(function () {
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
     $('.carousel').carousel({
         touch: false
     });
@@ -64,7 +64,6 @@ function setSellerLabels() {
         $("#seller-individual-cnp-label").text("CNP");
 
         $("#seller-different-fiscal-address-pf-info-div").prop('hidden', false);
-        $("#seller-different-fiscal-address-pj-info-div").prop('hidden', true);
     } else {
         $("#seller-individual-name-label").text("Societate");
         $("#seller-address-type-header").text("Adresă sediu");
@@ -80,7 +79,6 @@ function setSellerLabels() {
         $("#seller-individual-cnp-label").text("CIF");
 
         $("#seller-different-fiscal-address-pf-info-div").prop('hidden', true);
-        $("#seller-different-fiscal-address-pj-info-div").prop('hidden', false);
     }
 }
 
@@ -100,7 +98,6 @@ function setBuyerLabels() {
         $("#buyer-individual-cnp-label").text("CNP");
 
         $("#buyer-different-fiscal-address-pf-info-div").prop('hidden', false);
-        $("#buyer-different-fiscal-address-pj-info-div").prop('hidden', true);
     } else {
         $("#buyer-individual-name-label").text("Societate");
         $("#buyer-address-type-header").text("Adresă sediu");
@@ -116,6 +113,5 @@ function setBuyerLabels() {
         $("#buyer-individual-cnp-label").text("CIF");
 
         $("#buyer-different-fiscal-address-pf-info-div").prop('hidden', true);
-        $("#buyer-different-fiscal-address-pj-info-div").prop('hidden', false);
     }
 }

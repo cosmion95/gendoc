@@ -25,20 +25,41 @@
 </head>
 
 <body data-bs-theme="<%= session_theme %>">
-    <div class="fixed-button-container">
-        <button type="button" class="btn btn-light btn-theme btn-round" onclick="toggleTheme()">
-            <i class="fa-solid fa-moon"></i>
-        </button>
+    <nav class="navbar navbar-expand bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/static/img/gd-high-resolution-logo-transparent-3.png" alt="GD" style="width:40px;">
+            </a>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Acasă</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tipuri
+                            documente</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Contract înstrăinare - dobândire auto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button type="button" class="btn btn-light btn-theme btn-round" onclick="toggleTheme()">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pricing-header px-2 py-2 pt-md-3 pb-md-2 mx-auto text-center">
+        <h1 class="display-4">Contract înstrăinare - dobândire auto</h1>
+        <p class="lead">Model 2016 ITL 054, varianta necompletată disponibilă
+            <a href="/static/pdfs/contract_instrainare_dobandire_auto.pdf" target="_blank">aici</a>.
+        </p>
     </div>
 
-    <h1>Contract înstrăinare - dobândire auto</h1>
-    <h4>
-        Model 2016 ITL 054, varianta necompletată disponibilă
-        <a href="/static/pdfs/contract_instrainare_dobandire_auto.pdf" target="_blank">aici</a>
-    </h4>
-
     <div id="main-carousel" class="carousel slide" data-interval="false">
-
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <%- include('seller_info') %>
@@ -50,10 +71,14 @@
 
             <div class="carousel-item">
                 <%- include('vehicle_info') %>
-            </div>s
+            </div>
         </div>
-
     </div>
+
+    <footer class="container-fluid text-center bg-dark ">
+        <p>&copy 2023 gendoc </p>
+    </footer>
+
 </body>
 
 </html>
