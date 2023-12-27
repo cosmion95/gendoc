@@ -1,14 +1,14 @@
-<div class="card">
+<div class="card main-card">
     <div class="card-body">
-        <div class="card-header">
-            <h4 class="card-title">Obiectul contractului</h4>
+        <div class="card-header main-card-header">
+            <h3 class="card-title">Obiectul contractului</h3>
         </div>
 
         <div class="card mt-3">
             <div class="card-body">
                 <div class="card-header">
-                    <h4 class="card-title">Informații autovehicul
-                    </h4>
+                    <h5 class="card-title">Informații autovehicul
+                    </h5>
                 </div>
                 <form id="vehicle-info-form" class="row">
                     <div class="form-floating col-md-4 col-sm-12 col-lg-3">
@@ -118,8 +118,8 @@
         <div class="card mt-3">
             <div class="card-body">
                 <div class="card-header">
-                    <h4 class="card-title">Informații vânzător
-                    </h4>
+                    <h5 class="card-title">Informații vânzător
+                    </h5>
                 </div>
                 <form id="vehicle-info-form" class="row">
                     <div class="form-floating col-md-4 col-sm-12 col-lg-3">
@@ -146,8 +146,8 @@
         <div class="card mt-3">
             <div class="card-body">
                 <div class="card-header">
-                    <h4 class="card-title">Preț
-                    </h4>
+                    <h5 class="card-title">Preț
+                    </h5>
                 </div>
                 <form id="vehicle-info-form" class="row">
                     <div class="form-floating col-md-4 col-sm-12 col-lg-3">
@@ -174,29 +174,34 @@
         <div class="card mt-3">
             <div class="card-body">
                 <div class="card-header">
-                    <h4 class="card-title">Încheiere contract
-                    </h4>
+                    <h5 class="card-title">Încheiere contract
+                    </h5>
                 </div>
-                <div class="form-floating col-md-4 col-sm-12 col-lg-3">
-                    <input id="contract-date-input" placeholder="contract-date-input" class="form-control"
-                        type="text" /><label for="contract-date-input">Data</label>
-                </div>
-                <div class="form-floating col-md-4 col-sm-12 col-lg-3">
-                    <input id="contract-place-input" placeholder="contract-place-input" class="form-control"
-                        type="text" /><label for="contract-place-input">Locul</label>
-                </div>
-                <div class="form-check mt-3 mb-3">
-                    <input type="checkbox" class="form-check-input" id="with-additional-papers-checkbox"
-                        value="with-additional-papers-checkbox">
-                    <label class="form-check-label" for="with-additional-papers-checkbox">Cu
-                        anexe la contract</label>
-                </div>
+                <form class="row">
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="contract-date-input" placeholder="contract-date-input" class="form-control"
+                            type="text" /><label for="contract-date-input">Data</label>
+                    </div>
+                    <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                        <input id="contract-place-input" placeholder="contract-place-input" class="form-control"
+                            type="text" /><label for="contract-place-input">Locul</label>
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="card-footer mt-3">
-            <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="1"
-                class="btn btn-success carousel-button">Înapoi</button>
+        <div class="form-check mt-3 mb-3 card-checkbox">
+            <input type="checkbox" class="form-check-input" id="with-additional-papers-checkbox"
+                value="with-additional-papers-checkbox">
+            <label class="form-check-label" for="with-additional-papers-checkbox">Cu
+                anexe la contract</label>
+        </div>
+
+        <div class="card-footer main-card-footer mt-3">
+            <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="1" onclick="setCarouselPageIndex(1)"
+                class="btn btn-success active carousel-button">Înapoi</button>
+            <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="2" disabled
+                class="btn btn-success active carousel-button">Înainte</button>
             <button type="button" onclick="generatePdf()" class="btn btn-primary carousel-button">Generare
                 PDF</button>
         </div>

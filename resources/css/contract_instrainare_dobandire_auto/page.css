@@ -1,34 +1,53 @@
-form label {
-    margin-left: 10px;
+body, html {
+    height: 100%;
+    margin: 0;
 }
 
-div.card-header {
-    margin-bottom: 10px;
+.container-full-height {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.fiscal-address-checkbox {
-    position: relative;
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.form-floating > label {
+    left: inherit;
+}
+
+.card-body > .row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-body > .row > .form-floating {
     margin-bottom: 1rem;
 }
 
-.form-floating {
-    position: relative;
-    margin-bottom: 1rem;
+.card-body > .card {
+    border-radius: 0;
 }
 
-.card-header-with-info {
-    position: relative;
-    margin-bottom: 1rem;
+.card-title {
+    margin-right: 0.5rem;
 }
 
-.form-floating input {
-    padding-right: 36px;
+.card-checkbox {
+    position: relative;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.card-header {
+    position: relative;
+    margin-bottom: 1rem;
 }
 
 .info-btn {
-    margin-right: 10px;
     position: absolute;
-    right: 10px;
+    margin-right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -42,23 +61,16 @@ div.card-header {
     color: white;
 }
 
-.info-btn-header {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #007bff;
-    color: white;
+.form-floating > .info-btn {
+    right: 1rem;
+}
+
+.card-header > div > .info-btn {
+    top: 45%;
 }
 
 .card-body {
-    padding: 0px;
+    padding: 0;
 }
 
 .main-card {
@@ -66,42 +78,21 @@ div.card-header {
 	margin-left: 1rem !important;
 }
 
-.main-card.card-body {
-    margin-left: 1rem !important;
-}
-
-.field-card {
-    margin-left: 1rem !important;
-}
-
-
-.card-body .form-control {
-    padding-left: 1rem !important;
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
     border-bottom: 1px solid #f8f9fa;
 }
 
-.card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* .main-card-header.card-header {
-    background-color: #7D7C7C;
-}
-
-.card-header {
-    background-color: #D2E3C8;
-}
-
-.main-card-footer {
-    background-color: #B2C8BA;
-} */
-
 footer {
     color: white;
     padding: 15px;
-    /* position: fixed; */
-    bottom: 0;
+    border-top: 1px solid #f8f9fa;
+    margin-top: 1rem;
+}
+
+.page-title {
+    font-weight: inherit;
 }

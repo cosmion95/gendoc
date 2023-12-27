@@ -8,6 +8,14 @@ $(document).ready(function () {
         touch: false
     });
 
+    // navigate to carousel page found in this session
+    var myCarousel = new bootstrap.Carousel(document.getElementById('main-carousel'));
+    var lastSeenIndex = sessionStorage.getItem('carouselPageIndex');
+    if (lastSeenIndex !== null) {
+        myCarousel.to(parseInt(lastSeenIndex, 10));
+        $('html, body').animate({ scrollTop: 0 });
+    }
+
     if (document.getElementById('seller-different-fiscal-address-checkbox').checked) {
         document.getElementById('seller-different-fiscal-address-card').classList.remove('d-none');
     }
@@ -41,7 +49,7 @@ $(document).ready(function () {
         var card = document.getElementById('seller-different-fiscal-address-card');
         card.classList.toggle('d-none', !this.checked);
     });
-    
+
     document.getElementById('buyer-different-fiscal-address-checkbox').addEventListener('change', function () {
         var card = document.getElementById('buyer-different-fiscal-address-card');
         card.classList.toggle('d-none', !this.checked);
@@ -114,4 +122,8 @@ function setBuyerLabels() {
 
         $("#buyer-different-fiscal-address-pf-info-div").prop('hidden', true);
     }
+}
+
+function setCarouselPageIndex(index) {
+    sessionStorage.setItem('carouselPageIndex', index);
 }

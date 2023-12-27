@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <link href="/static/css/external/bootstrap.min.css" rel="stylesheet" />
+
     <link href="/static/css/theme.css" rel="stylesheet" />
     <link href="/static/css/contract_instrainare_dobandire_auto/page.css" rel="stylesheet" />
 
@@ -22,62 +23,127 @@
     <script src="/static/js/theme.js"></script>
 
     <title>Contract înstrăinare - dobândire auto</title>
+
+    <style>
+        /* :root {
+            --page-background-color: #DEE5E5;
+
+            --navbar-footer-background-color: #0D1F2D;
+            --navbar-footer-text-color: #DEE5E5;
+
+            --main-card-header-background-color: #8CBAAF;
+            --main-card-body-background-color: #DEE5E5;
+            --main-card-footer-background-color: #C6D2D2;
+
+            --card-header-background-color: #9DC5BB;
+            --card-body-background-color: #DEE5E5;
+            --card-footer-background-color: #C6D2D2;
+        }
+
+        body {
+            background-color: var(--page-background-color);
+        }
+
+        nav {
+            background-color: var(--navbar-footer-background-color);
+            color: var(--navbar-footer-text-color);
+        }
+
+        .nav-item {
+            color: var(--navbar-footer-text-color);
+        }
+
+        .nav-link {
+            color: var(--navbar-footer-text-color);
+        }
+
+        footer {
+            background-color: var(--navbar-footer-background-color);
+            color: var(--navbar-footer-text-color);
+        }
+
+        .main-card-header.card-header {
+            background-color: var(--main-card-header-background-color);
+        }
+
+        .card-header {
+            background-color: var(--card-header-background-color);
+        }
+
+        .main-card-footer {
+            background-color: var(--main-card-footer-background-color);
+        }
+
+        .card-body {
+            background-color: var(--card-body-background-color);
+        }
+         */
+    </style>
 </head>
 
 <body data-bs-theme="<%= session_theme %>">
-    <nav class="navbar navbar-expand bg-dark navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="/static/img/gd-high-resolution-logo-transparent-3.png" alt="GD" style="width:40px;">
-            </a>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Acasă</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tipuri
-                            documente</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Contract înstrăinare - dobândire auto</a></li>
+
+    <div class="container-full-height">
+        <div class="flex-grow-1">
+
+            <nav class="navbar navbar-expand bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">
+                        <img src="/static/img/gd-high-resolution-logo-transparent-3.png" alt="GD" style="width:40px;">
+                    </a>
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Acasă</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown">Tipuri
+                                    documente</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Contract înstrăinare - dobândire auto</a></li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <button type="button" class="btn btn-light btn-theme btn-round" onclick="toggleTheme()">
-                        <i class="fa-solid fa-moon"></i>
-                    </button>
-                </form>
+                        <form class="d-flex">
+                            <button type="button" class="btn btn-light btn-theme btn-round" onclick="toggleTheme()">
+                                <i class="fa-solid fa-moon"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pricing-header px-2 py-2 pt-md-3 pb-md-2 mx-auto text-center">
+                <h1 class="display-4 page-title">Contract înstrăinare - dobândire auto</h1>
+                <p class="lead">Model 2016 ITL 054, varianta necompletată disponibilă
+                    <a href="/static/pdfs/contract_instrainare_dobandire_auto.pdf" target="_blank">aici</a>.
+                </p>
             </div>
+
+            <div id="main-carousel" class="carousel slide" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <%- include('seller_info') %>
+                    </div>
+
+                    <div class="carousel-item">
+                        <%- include('buyer_info') %>
+                    </div>
+
+                    <div class="carousel-item">
+                        <%- include('vehicle_info') %>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </nav>
 
-    <div class="pricing-header px-2 py-2 pt-md-3 pb-md-2 mx-auto text-center">
-        <h1 class="display-4">Contract înstrăinare - dobândire auto</h1>
-        <p class="lead">Model 2016 ITL 054, varianta necompletată disponibilă
-            <a href="/static/pdfs/contract_instrainare_dobandire_auto.pdf" target="_blank">aici</a>.
-        </p>
+        <footer class="container-fluid text-center bg-dark ">
+            <p>&copy 2023 gendoc </p>
+        </footer>
+
     </div>
-
-    <div id="main-carousel" class="carousel slide" data-interval="false">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <%- include('seller_info') %>
-            </div>
-
-            <div class="carousel-item">
-                <%- include('buyer_info') %>
-            </div>
-
-            <div class="carousel-item">
-                <%- include('vehicle_info') %>
-            </div>
-        </div>
-    </div>
-
-    <footer class="container-fluid text-center bg-dark ">
-        <p>&copy 2023 gendoc </p>
-    </footer>
 
 </body>
 

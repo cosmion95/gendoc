@@ -1,46 +1,45 @@
 <div class="card main-card">
     <div class="card-body">
         <div class="card-header main-card-header">
-            <h4 class="card-title">Informații vânzător</h4>
-            <div class="form-group col-md-4 col-sm-12 col-lg-3">
-                <select class="form-select" id="seller-type" name="seller-type">
+            <h3 class="card-title">Informații vânzător</h3>
+        </div>
+
+        <form id="seller-basic-info" class="row">
+            <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                <select class="form-select" id="seller-type">
                     <option value="PF" selected>Persoană fizică
                     </option>
                     <option value="PJ">Persoană juridică</option>
                 </select>
+                <label id="seller-type-label" for="seller-type">Tip</label>
             </div>
-        </div>
-
-        <div class="form-floating col-md-4 col-sm-12 col-lg-3 field-card">
-            <input id="seller-individual-name" placeholder="seller-individual-name" class="form-control"
-                name="seller-individual-name" type="text" />
-            <label id="seller-individual-name-label" for="seller-individual-name"></label>
-            <div id="seller-individual-name-info-pf" class="info-btn" data-bs-toggle="popover" data-bs-html="true"
-                data-bs-trigger="focus" tabindex="0"
-                data-bs-content="Numele complet al vânzătorului, format din numele de familie și prenume. <br>Ex: <b>Popescu Ion</b>">
-                i</div>
-            <div id="seller-individual-name-info-pj" class="info-btn" data-bs-toggle="popover" data-bs-html="true"
-                data-bs-trigger="focus" tabindex="0"
-                data-bs-content="Denumirea societății. <br>Ex: <b> Denumire Societate SRL</b>">
-                i</div>
-        </div>
+            <div class="form-floating col-md-4 col-sm-12 col-lg-3">
+                <input id="seller-individual-name" placeholder="seller-individual-name" class="form-control"
+                    name="seller-individual-name" type="text" />
+                <label id="seller-individual-name-label" for="seller-individual-name"></label>
+                <div id="seller-individual-name-info-pf" class="info-btn" data-bs-toggle="popover" data-bs-html="true"
+                    data-bs-trigger="focus" tabindex="0"
+                    data-bs-content="Numele complet al vânzătorului, format din numele de familie și prenume. <br>Ex: <b>Popescu Ion</b>">
+                    i</div>
+                <div id="seller-individual-name-info-pj" class="info-btn" data-bs-toggle="popover" data-bs-html="true"
+                    data-bs-trigger="focus" tabindex="0"
+                    data-bs-content="Denumirea societății. <br>Ex: <b> Denumire Societate SRL</b>">
+                    i</div>
+            </div>
+        </form>
 
         <div class="card box-shadow mt-3">
             <div class="card-body">
-                <div
-                    class="card-header card-header-with-info card-header card-header-with-info d-flex justify-content-between align-items-center">
-                    <div class="row">
-                        <div class="col" style="padding-right: 0px;">
-                            <h6 id="seller-address-type-header" class="card-title card-title-with-info">
-                            </h6>
-                        </div>
-                        <div id="seller-address-type-info-div" class="col" style="padding-left: 5px;">
-                            <div class="info-btn-header" data-bs-toggle="popover" data-bs-html="true"
-                                data-bs-trigger="focus"
-                                data-bs-content="Adresa de domiciliu a vânzătorului, conform documentului cu care se identifică. <br>Ex: <b>adresa din buletin</b>"
-                                tabindex="0">
-                                i</div>
-                        </div>
+                <div class="card-header d-flex">
+                    <div>
+                        <h5 id="seller-address-type-header" class="card-title">
+                        </h5>
+                    </div>
+                    <div id="seller-address-type-info-div">
+                        <div class="info-btn" data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="focus"
+                            data-bs-content="Adresa de domiciliu a vânzătorului, conform documentului cu care se identifică. <br>Ex: <b>adresa din buletin</b>"
+                            tabindex="0">
+                            i</div>
                     </div>
                 </div>
                 <form id="seller-individual-address-form" class="row">
@@ -107,13 +106,15 @@
 
         <div class="card box-shadow mt-3">
             <div class="card-body">
-                <div class="card-header card-header-with-info">
-                    <h6 class="card-title card-title-with-info">Date
-                        de identificare</h6>
-                    <div id="seller-identity-info-div" class="info-btn" data-bs-toggle="popover" data-bs-html="true"
-                        style="left: 160px" data-bs-trigger="focus" tabindex="0"
-                        data-bs-content="Informații din documentul cu care vânzătorul se identifică. <br>Ex: <b>carte de identitate, pașaport</b>">
-                        i</div>
+                <div class="card-header d-flex">
+                    <h5 class="card-title">Date
+                        de identificare</h5>
+                    <div id="seller-identity-info-div">
+                        <div class="info-btn" data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="focus"
+                            tabindex="0"
+                            data-bs-content="Informații din documentul cu care vânzătorul se identifică. <br>Ex: <b>carte de identitate, pașaport</b>">
+                            i</div>
+                    </div>
                 </div>
                 <form id="seller-individual-form" class="row">
                     <div id="seller-individual-id-series-div" class="form-floating col-md-4 col-sm-12 col-lg-3">
@@ -145,7 +146,7 @@
         <div class="card mt-3">
             <div class="card-body">
                 <div class="card-header">
-                    <h6 class="card-title">Date de contact</h6>
+                    <h5 class="card-title">Date de contact</h5>
                 </div>
                 <form id="seller-individual-form" class="row">
                     <div class="form-floating col-md-4 col-sm-12 col-lg-3">
@@ -162,7 +163,7 @@
             </div>
         </div>
 
-        <div class="form-check mt-3 mb-3 fiscal-address-checkbox">
+        <div class="form-check mt-3 mb-3 card-checkbox">
             <input type="checkbox" class="form-check-input" id="seller-different-fiscal-address-checkbox"
                 value="seller-different-fiscal-address-checkbox">
             <label class="form-check-label" for="seller-different-fiscal-address-checkbox">Cu alt
@@ -177,7 +178,7 @@
         <div id="seller-different-fiscal-address-card" class="card mt-3 mb-3 d-none">
             <div class="card-body">
                 <div class="card-header">
-                    <h6 class="card-title">Domiciliu fiscal</h6>
+                    <h5 class="card-title">Domiciliu fiscal</h5>
                 </div>
                 <form id="different-fiscal-address-form" class="row">
                     <div class="form-floating col-md-4 col-sm-12 col-lg-3">
@@ -240,7 +241,9 @@
             </div>
         </div>
         <div class="card-footer main-card-footer">
-            <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="1"
+            <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="0" disabled
+                class="btn btn-success active carousel-button">Înapoi</button>
+            <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="1" onclick="setCarouselPageIndex(1)"
                 class="btn btn-success active carousel-button">Înainte</button>
         </div>
     </div>
